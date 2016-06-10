@@ -1,0 +1,405 @@
+<!DOCTYPE html>
+
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="initial-scale=1, maximum-scale=1, user-scalable=yes, width=device-width">
+  <title>Cisco Kubernetes Client — Namespace: apis</title>
+  <link rel="shortcut icon" href="/favicon.ico">
+
+  <!--[if lt IE 9]>
+  <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+  <![endif]-->
+  <link type="text/css" rel="stylesheet" href="styles/sunlight.dark.css">
+
+  <link type="text/css" rel="stylesheet" href="styles/site.oblivion.css">
+</head>
+<body>
+<div class="container-fluid">
+  <div class="navbar navbar-fixed-top navbar-inverse">
+    <div class="navbar-inner">
+      <a class="brand" href="index.html">Cisco Kubernetes Client</a>
+      <ul class="nav">
+        
+        <li class="dropdown">
+          <a href="namespaces.list.html" class="dropdown-toggle" data-toggle="dropdown">Namespaces<b
+            class="caret"></b></a>
+
+          <ul class="dropdown-menu ">
+            
+            <li>
+              <a href="api.html">api</a>
+            </li>
+            
+            <li>
+              <a href="api.v1.html">api.v1</a>
+            </li>
+            
+            <li>
+              <a href="apis.html">apis</a>
+            </li>
+            
+            <li>
+              <a href="apis.extensions.html">apis.extensions</a>
+            </li>
+            
+            <li>
+              <a href="apis.extensions.v1beta1.html">apis.extensions.v1beta1</a>
+            </li>
+            
+            <li>
+              <a href="oapi.html">oapi</a>
+            </li>
+            
+            <li>
+              <a href="oapi.v1.html">oapi.v1</a>
+            </li>
+            
+
+          </ul>
+        </li>
+        
+        <li class="dropdown">
+          <a href="modules.list.html" class="dropdown-toggle" data-toggle="dropdown">Modules<b
+            class="caret"></b></a>
+
+          <ul class="dropdown-menu ">
+            
+            <li>
+              <a href="module-_%2520index.html">* index</a>
+            </li>
+            
+            <li>
+              <a href="module-auth.html">auth</a>
+            </li>
+            
+            <li>
+              <a href="module-client.html">client</a>
+            </li>
+            
+            <li>
+              <a href="module-endpoints.html">endpoints</a>
+            </li>
+            
+            <li>
+              <a href="module-errors.html">errors</a>
+            </li>
+            
+
+          </ul>
+        </li>
+        
+        <li class="dropdown">
+          <a href="classes.list.html" class="dropdown-toggle" data-toggle="dropdown">Classes<b
+            class="caret"></b></a>
+
+          <ul class="dropdown-menu ">
+            
+            <li>
+              <a href="module-client.KubernetesClient.html">client.KubernetesClient</a>
+            </li>
+            
+            <li>
+              <a href="module-client-ClientConfig.html">client~ClientConfig</a>
+            </li>
+            
+            <li>
+              <a href="module-endpoints-Endpoint.html">endpoints~Endpoint</a>
+            </li>
+            
+            <li>
+              <a href="module-endpoints-NodesEndpoint.html">endpoints~NodesEndpoint</a>
+            </li>
+            
+            <li>
+              <a href="module-endpoints-ReplicationControllersEndpoint.html">endpoints~ReplicationControllersEndpoint</a>
+            </li>
+            
+            <li>
+              <a href="module-endpoints-WatchEmitter.html">endpoints~WatchEmitter</a>
+            </li>
+            
+            <li>
+              <a href="module-errors.HttpError.html">errors.HttpError</a>
+            </li>
+            
+            <li>
+              <a href="module-errors.ParameterError.html">errors.ParameterError</a>
+            </li>
+            
+            <li>
+              <a href="module-errors.TokenParseError.html">errors.TokenParseError</a>
+            </li>
+            
+            <li>
+              <a href="module-errors.VersionError.html">errors.VersionError</a>
+            </li>
+            
+            <li>
+              <a href="module-errors-ClientError.html">errors~ClientError</a>
+            </li>
+            
+
+          </ul>
+        </li>
+        
+        <li class="dropdown">
+          <a href="events.list.html" class="dropdown-toggle" data-toggle="dropdown">Events<b
+            class="caret"></b></a>
+
+          <ul class="dropdown-menu ">
+            
+            <li>
+              <a href="module-endpoints.html#~event:create">event:create</a>
+            </li>
+            
+            <li>
+              <a href="module-endpoints.html#~event:delete">event:delete</a>
+            </li>
+            
+            <li>
+              <a href="module-endpoints.html#~event:error">event:error</a>
+            </li>
+            
+            <li>
+              <a href="module-endpoints.html#~event:response">event:response</a>
+            </li>
+            
+            <li>
+              <a href="module-endpoints.html#~event:update">event:update</a>
+            </li>
+            
+
+          </ul>
+        </li>
+        
+      </ul>
+    </div>
+  </div>
+
+  <div class="row-fluid">
+
+    
+    <div class="span3">
+      <div id="toc"></div>
+    </div>
+    
+
+    
+    <div class="span9">
+      
+        <div id="main">
+          
+
+
+	<h1 class="page-title">Namespace: apis</h1>
+<section>
+
+<header>
+    <h2>
+    apis
+    </h2>
+    
+</header>
+
+<article>
+    <div class="container-overview">
+    
+
+    
+        
+            <div class="description"><p>Specification of the Kubernetes API groups</p>
+<p>API groups allow for easy expansion of the base Kubernetes API while maintaining compatibility with the main
+resource endpoints. This library comes prepackaged with the <code>extensions</code> API group from Kubernetes, available by
+setting the <code>beta</code> configuration property to the desired extensions version, or <code>true</code> for the latest available
+version. Below is an example for defining API groups for the client. Specify additional <a href="global.html#APISpecification"><code>APISpecification</code></a>
+objects in the <code>apis</code> configuration property to add custom API groups to the client.</p></div>
+        
+
+        
+<dl class="details">
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+
+
+  
+
+  
+
+  
+
+  
+</dl>
+
+
+        
+            <h3>Example</h3>
+            
+    <pre class="sunlight-highlight-javascript">config.apis = [{
+    // Define name in the format: {API_GROUP}/{VERSION}
+    name: &#x27;fruits/v1&#x27;
+    , spec: {
+        // &#x60;apples&#x60; endpoint for resource of kind &#x60;Apple&#x60;
+        apples: {
+            kind: &#x27;Apple&#x27;
+            // Example of nested resource endpoint definitions
+            , nested: [{
+                resource: &#x27;peel&#x27;
+                , methods: [&#x27;get&#x27;, &#x27;put&#x27;]    // Defines &#x60;client.apples.getPeel&#x60; and &#x60;client.apples.putPeel&#x60; methods
+            }, {
+                resource: &#x27;juice&#x27;
+                , methods: [&#x27;get&#x27;]   // Defines &#x60;client.oranges.getJuice&#x60; method
+            }]
+        },
+        // &#x60;oranges&#x60; endpoint for resources of kind &#x60;Orange&#x60;
+        oranges: {
+            kind: &#x27;Orange&#x27;
+            , nickname: &#x27;oj&#x27; // Creates link to resource &#x60;client.oj === client.oranges&#x60;
+        }
+    }
+}];</pre>
+
+
+        
+    
+    </div>
+
+    
+
+    
+
+    
+
+    
+
+    
+        <h3 class="subsection-title">Namespaces</h3>
+
+        <dl>
+            <dt><a href="namespaces.html#apis.extensions"><a href="apis.extensions.html">extensions</a></a></dt>
+            <dd></dd>
+        </dl>
+    
+
+    
+
+    
+
+    
+
+    
+</article>
+
+</section>
+
+
+
+
+        </div>
+
+        <div class="clearfix"></div>
+        <footer>
+          
+          
+    <span class="copyright">
+    Copyright © 2016 <a href='https://cisco.com' target='_blank'>Cisco Systems, Inc.</a>
+    </span>
+          <br />
+          
+    <span class="jsdoc-message">
+    Documentation generated by <a href="https://github.com/jsdoc3/jsdoc" target="_blank">JSDoc 3.4.0</a>
+    on 2016-06-10T14:00:46-04:00
+    </span>
+        </footer>
+      </div>
+
+      <br clear="both">
+    </div>
+
+  </div>
+  <!--<script src="scripts/sunlight.js"></script>-->
+  <script src="scripts/docstrap.lib.js"></script>
+  <script src="scripts/bootstrap-dropdown.js"></script>
+  <script src="scripts/toc.js"></script>
+
+  <script>
+    $( function () {
+      $( "[id*='$']" ).each( function () {
+        var $this = $( this );
+
+        $this.attr( "id", $this.attr( "id" ).replace( "$", "__" ) );
+      } );
+
+      $( "#toc" ).toc( {
+        anchorName  : function ( i, heading, prefix ) {
+          return $( heading ).attr( "id" ) || ( prefix + i );
+        },
+        selectors   : "h1,h2,h3,h4",
+        showAndHide : false,
+        scrollTo    : "100px"
+      } );
+
+      $( "#toc>ul" ).addClass( "nav nav-pills nav-stacked" );
+      $( "#main span[id^='toc']" ).addClass( "toc-shim" );
+      $( '.dropdown-toggle' ).dropdown();
+//      $( ".tutorial-section pre, .readme-section pre" ).addClass( "sunlight-highlight-javascript" ).addClass( "linenums" );
+
+      $( ".tutorial-section pre, .readme-section pre" ).each( function () {
+        var $this = $( this );
+
+        var example = $this.find( "code" );
+        exampleText = example.html();
+        var lang = /{@lang (.*?)}/.exec( exampleText );
+        if ( lang && lang[1] ) {
+          exampleText = exampleText.replace( lang[0], "" );
+          example.html( exampleText );
+          lang = lang[1];
+        } else {
+          lang = "javascript";
+        }
+
+        if ( lang ) {
+
+          $this
+            .addClass( "sunlight-highlight-" + lang )
+            .addClass( "linenums" )
+            .html( example.html() );
+
+        }
+      } );
+
+      Sunlight.highlightAll( {
+        lineNumbers : true,
+        showMenu : true,
+        enableDoclinks : true
+      } );
+    } );
+   </script>
+
+
+
+  <!--Navigation and Symbol Display-->
+  
+
+
+  <!--Google Analytics-->
+  
+
+</body>
+</html>

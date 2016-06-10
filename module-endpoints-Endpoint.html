@@ -1,0 +1,2401 @@
+<!DOCTYPE html>
+
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="initial-scale=1, maximum-scale=1, user-scalable=yes, width=device-width">
+  <title>Cisco Kubernetes Client — Class: Endpoint</title>
+  <link rel="shortcut icon" href="/favicon.ico">
+
+  <!--[if lt IE 9]>
+  <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+  <![endif]-->
+  <link type="text/css" rel="stylesheet" href="styles/sunlight.dark.css">
+
+  <link type="text/css" rel="stylesheet" href="styles/site.oblivion.css">
+</head>
+<body>
+<div class="container-fluid">
+  <div class="navbar navbar-fixed-top navbar-inverse">
+    <div class="navbar-inner">
+      <a class="brand" href="index.html">Cisco Kubernetes Client</a>
+      <ul class="nav">
+        
+        <li class="dropdown">
+          <a href="namespaces.list.html" class="dropdown-toggle" data-toggle="dropdown">Namespaces<b
+            class="caret"></b></a>
+
+          <ul class="dropdown-menu ">
+            
+            <li>
+              <a href="api.html">api</a>
+            </li>
+            
+            <li>
+              <a href="api.v1.html">api.v1</a>
+            </li>
+            
+            <li>
+              <a href="apis.html">apis</a>
+            </li>
+            
+            <li>
+              <a href="apis.extensions.html">apis.extensions</a>
+            </li>
+            
+            <li>
+              <a href="apis.extensions.v1beta1.html">apis.extensions.v1beta1</a>
+            </li>
+            
+            <li>
+              <a href="oapi.html">oapi</a>
+            </li>
+            
+            <li>
+              <a href="oapi.v1.html">oapi.v1</a>
+            </li>
+            
+
+          </ul>
+        </li>
+        
+        <li class="dropdown">
+          <a href="modules.list.html" class="dropdown-toggle" data-toggle="dropdown">Modules<b
+            class="caret"></b></a>
+
+          <ul class="dropdown-menu ">
+            
+            <li>
+              <a href="module-_%2520index.html">* index</a>
+            </li>
+            
+            <li>
+              <a href="module-auth.html">auth</a>
+            </li>
+            
+            <li>
+              <a href="module-client.html">client</a>
+            </li>
+            
+            <li>
+              <a href="module-endpoints.html">endpoints</a>
+            </li>
+            
+            <li>
+              <a href="module-errors.html">errors</a>
+            </li>
+            
+
+          </ul>
+        </li>
+        
+        <li class="dropdown">
+          <a href="classes.list.html" class="dropdown-toggle" data-toggle="dropdown">Classes<b
+            class="caret"></b></a>
+
+          <ul class="dropdown-menu ">
+            
+            <li>
+              <a href="module-client.KubernetesClient.html">client.KubernetesClient</a>
+            </li>
+            
+            <li>
+              <a href="module-client-ClientConfig.html">client~ClientConfig</a>
+            </li>
+            
+            <li>
+              <a href="module-endpoints-Endpoint.html">endpoints~Endpoint</a>
+            </li>
+            
+            <li>
+              <a href="module-endpoints-NodesEndpoint.html">endpoints~NodesEndpoint</a>
+            </li>
+            
+            <li>
+              <a href="module-endpoints-ReplicationControllersEndpoint.html">endpoints~ReplicationControllersEndpoint</a>
+            </li>
+            
+            <li>
+              <a href="module-endpoints-WatchEmitter.html">endpoints~WatchEmitter</a>
+            </li>
+            
+            <li>
+              <a href="module-errors.HttpError.html">errors.HttpError</a>
+            </li>
+            
+            <li>
+              <a href="module-errors.ParameterError.html">errors.ParameterError</a>
+            </li>
+            
+            <li>
+              <a href="module-errors.TokenParseError.html">errors.TokenParseError</a>
+            </li>
+            
+            <li>
+              <a href="module-errors.VersionError.html">errors.VersionError</a>
+            </li>
+            
+            <li>
+              <a href="module-errors-ClientError.html">errors~ClientError</a>
+            </li>
+            
+
+          </ul>
+        </li>
+        
+        <li class="dropdown">
+          <a href="events.list.html" class="dropdown-toggle" data-toggle="dropdown">Events<b
+            class="caret"></b></a>
+
+          <ul class="dropdown-menu ">
+            
+            <li>
+              <a href="module-endpoints.html#~event:create">event:create</a>
+            </li>
+            
+            <li>
+              <a href="module-endpoints.html#~event:delete">event:delete</a>
+            </li>
+            
+            <li>
+              <a href="module-endpoints.html#~event:error">event:error</a>
+            </li>
+            
+            <li>
+              <a href="module-endpoints.html#~event:response">event:response</a>
+            </li>
+            
+            <li>
+              <a href="module-endpoints.html#~event:update">event:update</a>
+            </li>
+            
+
+          </ul>
+        </li>
+        
+      </ul>
+    </div>
+  </div>
+
+  <div class="row-fluid">
+
+    
+    <div class="span3">
+      <div id="toc"></div>
+    </div>
+    
+
+    
+    <div class="span9">
+      
+        <div id="main">
+          
+
+
+	<h1 class="page-title">Class: Endpoint</h1>
+<section>
+
+<header>
+    <h2>
+        <span class="ancestors"><a href="module-endpoints.html">endpoints</a>~</span>
+    
+    Endpoint
+    </h2>
+    
+        <div class="class-description"><p>Exposes all methods for an API resource endpoint. If there are any nested resources,
+they are exposed as methods of the parent resource. The HTTP verb used for the nested resource
+is prepended to the name.</p></div>
+    
+</header>
+
+<article>
+    <div class="container-overview">
+    
+
+    
+        
+<dt>
+    <h4 class="name" id="Endpoint"><span class="type-signature"></span>new Endpoint<span class="signature">(client, resource, <span class="optional">nested</span>, <span class="optional">options</span>)</span><span class="type-signature"></span></h4>
+    
+    
+    <p class="summary">Kubernetes API Endpoint</p>
+    
+</dt>
+<dd>
+    
+    
+    <div class="description">
+        <p>Define a new <code>Endpoint</code> object corresponding to a resource on the API
+server. Specify options to override the library defaults for this endpoint.</p>
+    </div>
+    
+
+    
+    
+    
+        <h5>This:</h5>
+        <ul><li>{<a href="module-endpoints-Endpoint.html">module:endpoints~Endpoint</a>}</li></ul>
+    
+    
+    
+        <h5>Parameters:</h5>
+        
+<div class="params-table-container">
+  <table class="params table table-striped">
+      <thead>
+    <tr>
+      
+      <th>Name</th>
+      
+  
+      <th>Type</th>
+  
+      
+      <th>Argument</th>
+      
+  
+      
+  
+      <th class="last">Description</th>
+    </tr>
+    </thead>
+  
+    <tbody>
+    
+  
+          <tr>
+              
+                  <td class="name"><code>client</code></td>
+              
+  
+              <td class="type">
+              
+                  
+<span class="param-type"><a href="module-client.KubernetesClient.html">module:client.KubernetesClient</a></span>
+
+
+              
+              </td>
+  
+              
+                  <td class="attributes">
+                  
+  
+                  
+  
+                  
+                  </td>
+              
+  
+              
+  
+              <td class="description last"><p>Sets <code>Endpoint#<a href="module-endpoints-Endpoint.html#client"><code>client</code></a></code></p></td>
+          </tr>
+  
+    
+  
+          <tr>
+              
+                  <td class="name"><code>resource</code></td>
+              
+  
+              <td class="type">
+              
+                  
+<span class="param-type">string</span>
+
+
+              
+              </td>
+  
+              
+                  <td class="attributes">
+                  
+  
+                  
+  
+                  
+                  </td>
+              
+  
+              
+  
+              <td class="description last"><p>Sets <code>Endpoint#<a href="module-endpoints-Endpoint.html#resource"><code>resource</code></a></code></p></td>
+          </tr>
+  
+    
+  
+          <tr>
+              
+                  <td class="name"><code>nested</code></td>
+              
+  
+              <td class="type">
+              
+                  
+<span class="param-type">Array.&lt;<a href="global.html#NestedResourceDefinition">NestedResourceDefinition</a>></span>
+
+
+              
+              </td>
+  
+              
+                  <td class="attributes">
+                  
+                      &lt;optional><br>
+                  
+  
+                  
+                      &lt;nullable><br>
+                  
+  
+                  
+                  </td>
+              
+  
+              
+  
+              <td class="description last"><p>List of nested endpoints</p></td>
+          </tr>
+  
+    
+  
+          <tr>
+              
+                  <td class="name"><code>options</code></td>
+              
+  
+              <td class="type">
+              
+                  
+<span class="param-type">object</span>
+
+
+              
+              </td>
+  
+              
+                  <td class="attributes">
+                  
+                      &lt;optional><br>
+                  
+  
+                  
+                      &lt;nullable><br>
+                  
+  
+                  
+                  </td>
+              
+  
+              
+  
+              <td class="description last"><p>Sets <code>Endpoint#<a href="module-endpoints-Endpoint.html#options"><code>options</code></a></code></p>
+                  <h6>Properties</h6>
+                  
+<div class="params-table-container">
+  <table class="params table table-striped">
+      <thead>
+    <tr>
+      
+      <th>Name</th>
+      
+  
+      <th>Type</th>
+  
+      
+      <th>Argument</th>
+      
+  
+      
+  
+      <th class="last">Description</th>
+    </tr>
+    </thead>
+  
+    <tbody>
+    
+  
+          <tr>
+              
+                  <td class="name"><code>version</code></td>
+              
+  
+              <td class="type">
+              
+                  
+<span class="param-type">string</span>
+
+
+              
+              </td>
+  
+              
+                  <td class="attributes">
+                  
+  
+                  
+  
+                  
+                  </td>
+              
+  
+              
+  
+              <td class="description last"><p>API version name</p></td>
+          </tr>
+  
+    
+  
+          <tr>
+              
+                  <td class="name"><code>prefix</code></td>
+              
+  
+              <td class="type">
+              
+                  
+<span class="param-type">string</span>
+
+
+              
+              </td>
+  
+              
+                  <td class="attributes">
+                  
+                      &lt;optional><br>
+                  
+  
+                  
+  
+                  
+                  </td>
+              
+  
+              
+  
+              <td class="description last"><p>Custom API prefix</p></td>
+          </tr>
+  
+    
+  
+          <tr>
+              
+                  <td class="name"><code>methods</code></td>
+              
+  
+              <td class="type">
+              
+                  
+<span class="param-type">Array.&lt;string></span>
+
+
+              
+              </td>
+  
+              
+                  <td class="attributes">
+                  
+                      &lt;optional><br>
+                  
+  
+                  
+  
+                  
+                  </td>
+              
+  
+              
+  
+              <td class="description last"><p>If defined, only the listed base methods will be available to the Endpoint</p></td>
+          </tr>
+  
+    
+    </tbody>
+  </table>
+</div>
+
+              </td>
+          </tr>
+  
+    
+    </tbody>
+  </table>
+</div>
+
+    
+    
+    
+<dl class="details">
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+
+
+  
+
+  
+
+  
+
+  
+</dl>
+
+    
+    
+
+    
+
+    
+    
+    
+    
+    
+    
+    
+</dd>
+
+    
+    </div>
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+        <h3 class="subsection-title">Members</h3>
+
+        <dl>
+            
+<dt class="name" id="client">
+    <h4><span class="type-signature"></span>client<span class="type-signature"> :<a href="module-client.KubernetesClient.html">module:client.KubernetesClient</a></span></h4>
+
+    
+</dt>
+<dd>
+    
+    <div class="description">
+        <p>Reference to the parent client object</p>
+    </div>
+    
+
+    
+        <h5>Type:</h5>
+        <ul>
+            <li>
+                
+<span class="param-type"><a href="module-client.KubernetesClient.html">module:client.KubernetesClient</a></span>
+
+
+            </li>
+        </ul>
+    
+
+    
+<dl class="details">
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+
+
+  
+
+  
+
+  
+
+  
+</dl>
+
+
+    
+</dd>
+
+        
+            
+<dt class="name" id="options">
+    <h4><span class="type-signature">&lt;nullable> </span>options<span class="type-signature"> :object</span></h4>
+
+    
+</dt>
+<dd>
+    
+    <div class="description">
+        <p>Endpoint option overrides</p>
+    </div>
+    
+
+    
+        <h5>Type:</h5>
+        <ul>
+            <li>
+                
+<span class="param-type">object</span>
+
+
+            </li>
+        </ul>
+    
+
+    
+<dl class="details">
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+
+
+  
+
+  
+
+  
+
+  
+</dl>
+
+
+    
+</dd>
+
+        
+            
+<dt class="name" id="resource">
+    <h4><span class="type-signature"></span>resource<span class="type-signature"> :string</span></h4>
+
+    
+</dt>
+<dd>
+    
+    <div class="description">
+        <p>Server resource name</p>
+    </div>
+    
+
+    
+        <h5>Type:</h5>
+        <ul>
+            <li>
+                
+<span class="param-type">string</span>
+
+
+            </li>
+        </ul>
+    
+
+    
+<dl class="details">
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+
+
+  
+
+  
+
+  
+
+  
+</dl>
+
+
+    
+</dd>
+
+        </dl>
+    
+
+    
+        <h3 class="subsection-title">Methods</h3>
+
+        <dl>
+            
+<dt>
+    <h4 class="name" id="create"><span class="type-signature"></span>create<span class="signature">(body, <span class="optional">opts</span>, <span class="optional">next</span>)</span><span class="type-signature"> &rarr; {Promise.&lt;<a href="global.html#KubernetesResource">KubernetesResource</a>>}</span></h4>
+    
+    
+</dt>
+<dd>
+    
+    
+    <div class="description">
+        <p>Create new resource on the API server</p>
+<p>Corresponds to the 'POST' http method.</p>
+    </div>
+    
+
+    
+    
+    
+        <h5>This:</h5>
+        <ul><li>{<a href="module-endpoints-Endpoint.html">module:endpoints~Endpoint</a>}</li></ul>
+    
+    
+    
+        <h5>Parameters:</h5>
+        
+<div class="params-table-container">
+  <table class="params table table-striped">
+      <thead>
+    <tr>
+      
+      <th>Name</th>
+      
+  
+      <th>Type</th>
+  
+      
+      <th>Argument</th>
+      
+  
+      
+  
+      <th class="last">Description</th>
+    </tr>
+    </thead>
+  
+    <tbody>
+    
+  
+          <tr>
+              
+                  <td class="name"><code>body</code></td>
+              
+  
+              <td class="type">
+              
+                  
+<span class="param-type"><a href="global.html#KubernetesResource">KubernetesResource</a></span>
+|
+
+<span class="param-type">*</span>
+
+
+              
+              </td>
+  
+              
+                  <td class="attributes">
+                  
+  
+                  
+  
+                  
+                  </td>
+              
+  
+              
+  
+              <td class="description last"><p>Resource object to send</p></td>
+          </tr>
+  
+    
+  
+          <tr>
+              
+                  <td class="name"><code>opts</code></td>
+              
+  
+              <td class="type">
+              
+                  
+<span class="param-type">object</span>
+
+
+              
+              </td>
+  
+              
+                  <td class="attributes">
+                  
+                      &lt;optional><br>
+                  
+  
+                  
+                      &lt;nullable><br>
+                  
+  
+                  
+                  </td>
+              
+  
+              
+  
+              <td class="description last"><p>Method options</p></td>
+          </tr>
+  
+    
+  
+          <tr>
+              
+                  <td class="name"><code>next</code></td>
+              
+  
+              <td class="type">
+              
+                  
+<span class="param-type">function</span>
+|
+
+<span class="param-type">*</span>
+
+
+              
+              </td>
+  
+              
+                  <td class="attributes">
+                  
+                      &lt;optional><br>
+                  
+  
+                  
+  
+                  
+                  </td>
+              
+  
+              
+  
+              <td class="description last"><p>Node.js callback (replaces Promise output)</p></td>
+          </tr>
+  
+    
+    </tbody>
+  </table>
+</div>
+
+    
+    
+    
+<dl class="details">
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+
+
+  
+
+  
+
+  
+
+  
+</dl>
+
+    
+    
+
+    
+
+    
+    
+    
+    
+    
+    <h5>Returns:</h5>
+    
+            
+
+
+<dl>
+  <dt>
+    Type
+  </dt>
+  <dd>
+    
+<span class="param-type">Promise.&lt;<a href="global.html#KubernetesResource">KubernetesResource</a>></span>
+
+
+  </dd>
+</dl>
+
+
+        
+    
+    
+</dd>
+
+        
+            
+<dt>
+    <h4 class="name" id="delete"><span class="type-signature"></span>delete<span class="signature">(query, <span class="optional">opts</span>, <span class="optional">next</span>)</span><span class="type-signature"> &rarr; {Promise.&lt;<a href="global.html#KubernetesResource">KubernetesResource</a>>}</span></h4>
+    
+    
+</dt>
+<dd>
+    
+    
+    <div class="description">
+        <p>Delete resource on the API server</p>
+<p>Corresponds to the 'DELETE' http method.</p>
+    </div>
+    
+
+    
+    
+    
+        <h5>This:</h5>
+        <ul><li>{<a href="module-endpoints-Endpoint.html">module:endpoints~Endpoint</a>}</li></ul>
+    
+    
+    
+        <h5>Parameters:</h5>
+        
+<div class="params-table-container">
+  <table class="params table table-striped">
+      <thead>
+    <tr>
+      
+      <th>Name</th>
+      
+  
+      <th>Type</th>
+  
+      
+      <th>Argument</th>
+      
+  
+      
+  
+      <th class="last">Description</th>
+    </tr>
+    </thead>
+  
+    <tbody>
+    
+  
+          <tr>
+              
+                  <td class="name"><code>query</code></td>
+              
+  
+              <td class="type">
+              
+                  
+<span class="param-type">string</span>
+
+
+              
+              </td>
+  
+              
+                  <td class="attributes">
+                  
+  
+                  
+  
+                  
+                  </td>
+              
+  
+              
+  
+              <td class="description last"><p>Server resource resource</p></td>
+          </tr>
+  
+    
+  
+          <tr>
+              
+                  <td class="name"><code>opts</code></td>
+              
+  
+              <td class="type">
+              
+                  
+<span class="param-type">object</span>
+
+
+              
+              </td>
+  
+              
+                  <td class="attributes">
+                  
+                      &lt;optional><br>
+                  
+  
+                  
+                      &lt;nullable><br>
+                  
+  
+                  
+                  </td>
+              
+  
+              
+  
+              <td class="description last"><p>Method options</p></td>
+          </tr>
+  
+    
+  
+          <tr>
+              
+                  <td class="name"><code>next</code></td>
+              
+  
+              <td class="type">
+              
+                  
+<span class="param-type">function</span>
+|
+
+<span class="param-type">*</span>
+
+
+              
+              </td>
+  
+              
+                  <td class="attributes">
+                  
+                      &lt;optional><br>
+                  
+  
+                  
+  
+                  
+                  </td>
+              
+  
+              
+  
+              <td class="description last"><p>Node.js callback (replaces Promise output)</p></td>
+          </tr>
+  
+    
+    </tbody>
+  </table>
+</div>
+
+    
+    
+    
+<dl class="details">
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+
+
+  
+
+  
+
+  
+
+  
+</dl>
+
+    
+    
+
+    
+
+    
+    
+    
+    
+    
+    <h5>Returns:</h5>
+    
+            
+
+
+<dl>
+  <dt>
+    Type
+  </dt>
+  <dd>
+    
+<span class="param-type">Promise.&lt;<a href="global.html#KubernetesResource">KubernetesResource</a>></span>
+
+
+  </dd>
+</dl>
+
+
+        
+    
+    
+</dd>
+
+        
+            
+<dt>
+    <h4 class="name" id="get"><span class="type-signature"></span>get<span class="signature">(<span class="optional">query</span>, <span class="optional">opts</span>, <span class="optional">next</span>)</span><span class="type-signature"> &rarr; {Promise.&lt;(<a href="global.html#KubernetesResource">KubernetesResource</a>|<a href="global.html#KubernetesList">KubernetesList</a>)>}</span></h4>
+    
+    
+</dt>
+<dd>
+    
+    
+    <div class="description">
+        <p>Request resources from the API server</p>
+<p>Corresponds to the 'GET' http method.</p>
+<p>Missing parameters can be stripped from the beginning of the parameter list and will be checked for type
+appropriately. If <code>query</code> is not defined, the returned <code>Promise</code> will be for a KubernetesList. Otherwise
+it will be a <code>Promise</code> for a KubernetesResource.</p>
+    </div>
+    
+
+    
+    
+    
+        <h5>This:</h5>
+        <ul><li>{<a href="module-endpoints-Endpoint.html">module:endpoints~Endpoint</a>}</li></ul>
+    
+    
+    
+        <h5>Parameters:</h5>
+        
+<div class="params-table-container">
+  <table class="params table table-striped">
+      <thead>
+    <tr>
+      
+      <th>Name</th>
+      
+  
+      <th>Type</th>
+  
+      
+      <th>Argument</th>
+      
+  
+      
+  
+      <th class="last">Description</th>
+    </tr>
+    </thead>
+  
+    <tbody>
+    
+  
+          <tr>
+              
+                  <td class="name"><code>query</code></td>
+              
+  
+              <td class="type">
+              
+                  
+<span class="param-type">string</span>
+
+
+              
+              </td>
+  
+              
+                  <td class="attributes">
+                  
+                      &lt;optional><br>
+                  
+  
+                  
+                      &lt;nullable><br>
+                  
+  
+                  
+                  </td>
+              
+  
+              
+  
+              <td class="description last"><p>Server resource name</p></td>
+          </tr>
+  
+    
+  
+          <tr>
+              
+                  <td class="name"><code>opts</code></td>
+              
+  
+              <td class="type">
+              
+                  
+<span class="param-type">object</span>
+
+
+              
+              </td>
+  
+              
+                  <td class="attributes">
+                  
+                      &lt;optional><br>
+                  
+  
+                  
+                      &lt;nullable><br>
+                  
+  
+                  
+                  </td>
+              
+  
+              
+  
+              <td class="description last"><p>Method options</p></td>
+          </tr>
+  
+    
+  
+          <tr>
+              
+                  <td class="name"><code>next</code></td>
+              
+  
+              <td class="type">
+              
+                  
+<span class="param-type">function</span>
+|
+
+<span class="param-type">*</span>
+
+
+              
+              </td>
+  
+              
+                  <td class="attributes">
+                  
+                      &lt;optional><br>
+                  
+  
+                  
+  
+                  
+                  </td>
+              
+  
+              
+  
+              <td class="description last"><p>Node.js callback (replaces Promise output)</p></td>
+          </tr>
+  
+    
+    </tbody>
+  </table>
+</div>
+
+    
+    
+    
+<dl class="details">
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+
+
+  
+
+  
+
+  
+
+  
+</dl>
+
+    
+    
+
+    
+
+    
+    
+    
+    
+    
+    <h5>Returns:</h5>
+    
+            
+
+
+<dl>
+  <dt>
+    Type
+  </dt>
+  <dd>
+    
+<span class="param-type">Promise.&lt;(<a href="global.html#KubernetesResource">KubernetesResource</a>|<a href="global.html#KubernetesList">KubernetesList</a>)></span>
+
+
+  </dd>
+</dl>
+
+
+        
+    
+    
+</dd>
+
+        
+            
+<dt>
+    <h4 class="name" id="patch"><span class="type-signature"></span>patch<span class="signature">(query, body, <span class="optional">opts</span>, <span class="optional">next</span>)</span><span class="type-signature"> &rarr; {Promise.&lt;<a href="global.html#KubernetesResource">KubernetesResource</a>>}</span></h4>
+    
+    
+</dt>
+<dd>
+    
+    
+    <div class="description">
+        <p>Partially update resource on the API server</p>
+<p>Corresponds to the 'PATCH' http method.</p>
+<p>Currently only the <code>application/strategic-merge-patch+json</code> content type is supported by default, but other types may
+be used by manually setting the <code>Content-Type</code> header in the method options.</p>
+    </div>
+    
+
+    
+    
+    
+        <h5>This:</h5>
+        <ul><li>{<a href="module-endpoints-Endpoint.html">module:endpoints~Endpoint</a>}</li></ul>
+    
+    
+    
+        <h5>Parameters:</h5>
+        
+<div class="params-table-container">
+  <table class="params table table-striped">
+      <thead>
+    <tr>
+      
+      <th>Name</th>
+      
+  
+      <th>Type</th>
+  
+      
+      <th>Argument</th>
+      
+  
+      
+  
+      <th class="last">Description</th>
+    </tr>
+    </thead>
+  
+    <tbody>
+    
+  
+          <tr>
+              
+                  <td class="name"><code>query</code></td>
+              
+  
+              <td class="type">
+              
+                  
+<span class="param-type">string</span>
+
+
+              
+              </td>
+  
+              
+                  <td class="attributes">
+                  
+  
+                  
+  
+                  
+                  </td>
+              
+  
+              
+  
+              <td class="description last"><p>Server resource resource</p></td>
+          </tr>
+  
+    
+  
+          <tr>
+              
+                  <td class="name"><code>body</code></td>
+              
+  
+              <td class="type">
+              
+                  
+<span class="param-type">object</span>
+
+
+              
+              </td>
+  
+              
+                  <td class="attributes">
+                  
+  
+                  
+  
+                  
+                  </td>
+              
+  
+              
+  
+              <td class="description last"><p>Resource patch to send</p></td>
+          </tr>
+  
+    
+  
+          <tr>
+              
+                  <td class="name"><code>opts</code></td>
+              
+  
+              <td class="type">
+              
+                  
+<span class="param-type">object</span>
+
+
+              
+              </td>
+  
+              
+                  <td class="attributes">
+                  
+                      &lt;optional><br>
+                  
+  
+                  
+                      &lt;nullable><br>
+                  
+  
+                  
+                  </td>
+              
+  
+              
+  
+              <td class="description last"><p>Method options</p></td>
+          </tr>
+  
+    
+  
+          <tr>
+              
+                  <td class="name"><code>next</code></td>
+              
+  
+              <td class="type">
+              
+                  
+<span class="param-type">function</span>
+|
+
+<span class="param-type">*</span>
+
+
+              
+              </td>
+  
+              
+                  <td class="attributes">
+                  
+                      &lt;optional><br>
+                  
+  
+                  
+  
+                  
+                  </td>
+              
+  
+              
+  
+              <td class="description last"><p>Node.js callback (replaces Promise output)</p></td>
+          </tr>
+  
+    
+    </tbody>
+  </table>
+</div>
+
+    
+    
+    
+<dl class="details">
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+
+
+  
+
+  
+
+  
+
+  
+</dl>
+
+    
+    
+
+    
+
+    
+    
+    
+    
+    
+    <h5>Returns:</h5>
+    
+            
+
+
+<dl>
+  <dt>
+    Type
+  </dt>
+  <dd>
+    
+<span class="param-type">Promise.&lt;<a href="global.html#KubernetesResource">KubernetesResource</a>></span>
+
+
+  </dd>
+</dl>
+
+
+        
+    
+    
+</dd>
+
+        
+            
+<dt>
+    <h4 class="name" id="update"><span class="type-signature"></span>update<span class="signature">(query, body, <span class="optional">opts</span>, <span class="optional">next</span>)</span><span class="type-signature"> &rarr; {Promise.&lt;<a href="global.html#KubernetesResource">KubernetesResource</a>>}</span></h4>
+    
+    
+</dt>
+<dd>
+    
+    
+    <div class="description">
+        <p>Update resource on the API server</p>
+<p>Corresponds to the 'PUT' http method.</p>
+    </div>
+    
+
+    
+    
+    
+        <h5>This:</h5>
+        <ul><li>{<a href="module-endpoints-Endpoint.html">module:endpoints~Endpoint</a>}</li></ul>
+    
+    
+    
+        <h5>Parameters:</h5>
+        
+<div class="params-table-container">
+  <table class="params table table-striped">
+      <thead>
+    <tr>
+      
+      <th>Name</th>
+      
+  
+      <th>Type</th>
+  
+      
+      <th>Argument</th>
+      
+  
+      
+  
+      <th class="last">Description</th>
+    </tr>
+    </thead>
+  
+    <tbody>
+    
+  
+          <tr>
+              
+                  <td class="name"><code>query</code></td>
+              
+  
+              <td class="type">
+              
+                  
+<span class="param-type">string</span>
+
+
+              
+              </td>
+  
+              
+                  <td class="attributes">
+                  
+  
+                  
+  
+                  
+                  </td>
+              
+  
+              
+  
+              <td class="description last"><p>Server resource resource</p></td>
+          </tr>
+  
+    
+  
+          <tr>
+              
+                  <td class="name"><code>body</code></td>
+              
+  
+              <td class="type">
+              
+                  
+<span class="param-type"><a href="global.html#KubernetesResource">KubernetesResource</a></span>
+|
+
+<span class="param-type">*</span>
+
+
+              
+              </td>
+  
+              
+                  <td class="attributes">
+                  
+  
+                  
+  
+                  
+                  </td>
+              
+  
+              
+  
+              <td class="description last"><p>Resource object to send</p></td>
+          </tr>
+  
+    
+  
+          <tr>
+              
+                  <td class="name"><code>opts</code></td>
+              
+  
+              <td class="type">
+              
+                  
+<span class="param-type">object</span>
+
+
+              
+              </td>
+  
+              
+                  <td class="attributes">
+                  
+                      &lt;optional><br>
+                  
+  
+                  
+                      &lt;nullable><br>
+                  
+  
+                  
+                  </td>
+              
+  
+              
+  
+              <td class="description last"><p>Method options</p></td>
+          </tr>
+  
+    
+  
+          <tr>
+              
+                  <td class="name"><code>next</code></td>
+              
+  
+              <td class="type">
+              
+                  
+<span class="param-type">function</span>
+|
+
+<span class="param-type">*</span>
+
+
+              
+              </td>
+  
+              
+                  <td class="attributes">
+                  
+                      &lt;optional><br>
+                  
+  
+                  
+  
+                  
+                  </td>
+              
+  
+              
+  
+              <td class="description last"><p>Node.js callback (replaces Promise output)</p></td>
+          </tr>
+  
+    
+    </tbody>
+  </table>
+</div>
+
+    
+    
+    
+<dl class="details">
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+
+
+  
+
+  
+
+  
+
+  
+</dl>
+
+    
+    
+
+    
+
+    
+    
+    
+    
+    
+    <h5>Returns:</h5>
+    
+            
+
+
+<dl>
+  <dt>
+    Type
+  </dt>
+  <dd>
+    
+<span class="param-type">Promise.&lt;<a href="global.html#KubernetesResource">KubernetesResource</a>></span>
+
+
+  </dd>
+</dl>
+
+
+        
+    
+    
+</dd>
+
+        
+            
+<dt>
+    <h4 class="name" id="watch"><span class="type-signature"></span>watch<span class="signature">(<span class="optional">query</span>, <span class="optional">opts</span>, <span class="optional">next</span>)</span><span class="type-signature"> &rarr; {module.endpoints~WatchEmitter}</span></h4>
+    
+    
+</dt>
+<dd>
+    
+    
+    <div class="description">
+        <p>Watch server resource(s) for changes</p>
+<p>Corresponds to the 'GET' http method with the <code>watch</code> query parameter set.</p>
+<p>Gets the current state of the requested resources and returns a custom event emitter (see below) with the current
+state set to the <code>initialState</code> property. Watch events will not be received until the <code>start</code> method is called on the
+emitter. This allows the user to define all event listeners before requesting events from the API server and prevent
+events from being missed during the initial setup.</p>
+<p>Missing parameters can be stripped from the beginning of the parameter list and will be checked for type
+appropriately. If query is not defined, the watched resource will be a KubernetesList. Otherwise it will be a
+KubernetesResource.</p>
+    </div>
+    
+
+    
+    
+    
+        <h5>This:</h5>
+        <ul><li>{<a href="module-endpoints-Endpoint.html">module:endpoints~Endpoint</a>}</li></ul>
+    
+    
+    
+        <h5>Parameters:</h5>
+        
+<div class="params-table-container">
+  <table class="params table table-striped">
+      <thead>
+    <tr>
+      
+      <th>Name</th>
+      
+  
+      <th>Type</th>
+  
+      
+      <th>Argument</th>
+      
+  
+      
+  
+      <th class="last">Description</th>
+    </tr>
+    </thead>
+  
+    <tbody>
+    
+  
+          <tr>
+              
+                  <td class="name"><code>query</code></td>
+              
+  
+              <td class="type">
+              
+                  
+<span class="param-type">string</span>
+
+
+              
+              </td>
+  
+              
+                  <td class="attributes">
+                  
+                      &lt;optional><br>
+                  
+  
+                  
+                      &lt;nullable><br>
+                  
+  
+                  
+                  </td>
+              
+  
+              
+  
+              <td class="description last"><p>Server resource resource</p></td>
+          </tr>
+  
+    
+  
+          <tr>
+              
+                  <td class="name"><code>opts</code></td>
+              
+  
+              <td class="type">
+              
+                  
+<span class="param-type">object</span>
+|
+
+<span class="param-type">*</span>
+
+
+              
+              </td>
+  
+              
+                  <td class="attributes">
+                  
+                      &lt;optional><br>
+                  
+  
+                  
+  
+                  
+                  </td>
+              
+  
+              
+  
+              <td class="description last"><p>Method options</p>
+                  <h6>Properties</h6>
+                  
+<div class="params-table-container">
+  <table class="params table table-striped">
+      <thead>
+    <tr>
+      
+      <th>Name</th>
+      
+  
+      <th>Type</th>
+  
+      
+      <th>Argument</th>
+      
+  
+      
+      <th>Default</th>
+      
+  
+      <th class="last">Description</th>
+    </tr>
+    </thead>
+  
+    <tbody>
+    
+  
+          <tr>
+              
+                  <td class="name"><code>verbose</code></td>
+              
+  
+              <td class="type">
+              
+                  
+<span class="param-type">boolean</span>
+
+
+              
+              </td>
+  
+              
+                  <td class="attributes">
+                  
+                      &lt;optional><br>
+                  
+  
+                  
+  
+                  
+                  </td>
+              
+  
+              
+                  <td class="default">
+                  
+                      false
+                  
+                  </td>
+              
+  
+              <td class="description last"><p>Return full response instead of body only</p></td>
+          </tr>
+  
+    
+  
+          <tr>
+              
+                  <td class="name"><code>child</code></td>
+              
+  
+              <td class="type">
+              
+                  
+<span class="param-type">string</span>
+
+
+              
+              </td>
+  
+              
+                  <td class="attributes">
+                  
+                      &lt;optional><br>
+                  
+  
+                  
+                      &lt;nullable><br>
+                  
+  
+                  
+                  </td>
+              
+  
+              
+                  <td class="default">
+                  
+                  </td>
+              
+  
+              <td class="description last"><p>Name of nested child resource</p></td>
+          </tr>
+  
+    
+    </tbody>
+  </table>
+</div>
+
+              </td>
+          </tr>
+  
+    
+  
+          <tr>
+              
+                  <td class="name"><code>next</code></td>
+              
+  
+              <td class="type">
+              
+                  
+<span class="param-type">function</span>
+|
+
+<span class="param-type">*</span>
+
+
+              
+              </td>
+  
+              
+                  <td class="attributes">
+                  
+                      &lt;optional><br>
+                  
+  
+                  
+  
+                  
+                  </td>
+              
+  
+              
+  
+              <td class="description last"><p>Node.js callback (replaces Promise output)</p></td>
+          </tr>
+  
+    
+    </tbody>
+  </table>
+</div>
+
+    
+    
+    
+<dl class="details">
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+
+
+  
+
+  
+
+  
+
+  
+</dl>
+
+    
+    
+
+    
+
+    
+    
+    
+    
+    
+    <h5>Returns:</h5>
+    
+            
+
+
+<dl>
+  <dt>
+    Type
+  </dt>
+  <dd>
+    
+<span class="param-type">module.endpoints~WatchEmitter</span>
+
+
+  </dd>
+</dl>
+
+
+        
+    
+    
+</dd>
+
+        </dl>
+    
+
+    
+
+    
+</article>
+
+</section>
+
+
+
+
+        </div>
+
+        <div class="clearfix"></div>
+        <footer>
+          
+          
+    <span class="copyright">
+    Copyright © 2016 <a href='https://cisco.com' target='_blank'>Cisco Systems, Inc.</a>
+    </span>
+          <br />
+          
+    <span class="jsdoc-message">
+    Documentation generated by <a href="https://github.com/jsdoc3/jsdoc" target="_blank">JSDoc 3.4.0</a>
+    on 2016-06-10T14:00:46-04:00
+    </span>
+        </footer>
+      </div>
+
+      <br clear="both">
+    </div>
+
+  </div>
+  <!--<script src="scripts/sunlight.js"></script>-->
+  <script src="scripts/docstrap.lib.js"></script>
+  <script src="scripts/bootstrap-dropdown.js"></script>
+  <script src="scripts/toc.js"></script>
+
+  <script>
+    $( function () {
+      $( "[id*='$']" ).each( function () {
+        var $this = $( this );
+
+        $this.attr( "id", $this.attr( "id" ).replace( "$", "__" ) );
+      } );
+
+      $( "#toc" ).toc( {
+        anchorName  : function ( i, heading, prefix ) {
+          return $( heading ).attr( "id" ) || ( prefix + i );
+        },
+        selectors   : "h1,h2,h3,h4",
+        showAndHide : false,
+        scrollTo    : "100px"
+      } );
+
+      $( "#toc>ul" ).addClass( "nav nav-pills nav-stacked" );
+      $( "#main span[id^='toc']" ).addClass( "toc-shim" );
+      $( '.dropdown-toggle' ).dropdown();
+//      $( ".tutorial-section pre, .readme-section pre" ).addClass( "sunlight-highlight-javascript" ).addClass( "linenums" );
+
+      $( ".tutorial-section pre, .readme-section pre" ).each( function () {
+        var $this = $( this );
+
+        var example = $this.find( "code" );
+        exampleText = example.html();
+        var lang = /{@lang (.*?)}/.exec( exampleText );
+        if ( lang && lang[1] ) {
+          exampleText = exampleText.replace( lang[0], "" );
+          example.html( exampleText );
+          lang = lang[1];
+        } else {
+          lang = "javascript";
+        }
+
+        if ( lang ) {
+
+          $this
+            .addClass( "sunlight-highlight-" + lang )
+            .addClass( "linenums" )
+            .html( example.html() );
+
+        }
+      } );
+
+      Sunlight.highlightAll( {
+        lineNumbers : true,
+        showMenu : true,
+        enableDoclinks : true
+      } );
+    } );
+   </script>
+
+
+
+  <!--Navigation and Symbol Display-->
+  
+
+
+  <!--Google Analytics-->
+  
+
+</body>
+</html>
