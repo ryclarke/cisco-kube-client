@@ -1,0 +1,37 @@
+{
+  "opts": {
+    "template": "node_modules/jsdoc-oblivion/template",
+    "readme": "README.md",
+    "destination": "docs/"
+  },
+  "source": {
+    "include": [
+      "index.js",
+      "lib/"
+    ],
+    "excludePattern": "\\.min\\.js$"
+  },
+  "tags": {
+    "allowUnknownTags": true
+  },
+  "plugins": ["plugins/markdown"],
+  "templates": {
+    "cleverLinks": false,
+    "monospaceLinks": true,
+    "default": {
+      "outputSourceFiles": true
+    },
+    "systemName"      : "Cisco Kubernetes Client",
+    "footer"          : "",
+    "copyright"       : "Copyright © 2016 <a href='https://cisco.com' target='_blank'>Cisco Systems, Inc.</a>",
+    "navType"         : "vertical",
+    "theme"           : "oblivion",
+    "linenums"        : true,
+    "collapseSymbols" : false,
+    "inverseNav"      : true
+  },
+  "markdown": {
+    "parser": "gfm",
+    "hardwrap": false
+  }
+}

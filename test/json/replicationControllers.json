@@ -1,0 +1,28 @@
+{
+  "apiVersion": "v1",
+  "kind": "ReplicationController",
+  "metadata": {
+    "name": "rc-test"
+  },
+  "spec": {
+    "replicas": 2,
+    "selector": {
+      "test": "selector"
+    },
+    "template": {
+      "metadata": {
+        "labels": {
+          "test": "selector"
+        }
+      },
+      "spec": {
+        "containers": [
+          {
+            "name": "test",
+            "image": "nginx"
+          }
+        ]
+      }
+    }
+  }
+}

@@ -1,0 +1,49 @@
+{
+  "name": "cisco-kube-client",
+  "version": "1.0.0",
+  "description": "Cisco Kubernetes and OpenShift client for Node.js",
+  "main": "index.js",
+  "engines": {
+    "node": "^4.3.2"
+  },
+  "scripts": {
+    "prepublish": "make",
+    "pretest": "make",
+    "test": "mocha --timeout 8000 --recursive test/util test/kubernetes test/extended",
+    "test-oshift": "mocha --timeout 8000 --recursive test/oshift"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/ryclarke/cisco-kube-client.git"
+  },
+  "keywords": [
+    "cisco",
+    "kubernetes",
+    "openshift",
+    "k8s",
+    "docker"
+  ],
+  "author": {
+    "name": "Ryan Clarke ryclarke@cisco.com"
+  },
+  "license": "BSD-3-Clause",
+  "bugs": {
+    "url": "https://github.com/ryclarke/cisco-kube-client/issues"
+  },
+  "dependencies": {
+    "bluebird": "^3.3.4",
+    "bunyan": "^1.8.1",
+    "request": "^2.26.0",
+    "sugar": "^1.3.9"
+  },
+  "devDependencies": {
+    "debug": "^2.2.0",
+    "jsdoc": "^3.4.0",
+    "jsdoc-oblivion": "0.0.4",
+    "mocha": "^2.4.5",
+    "should": "^8.3.1",
+    "uglify-js": "^2.6.2"
+  },
+  "homepage": "https://github.com/ryclarke/cisco-kube-client",
+  "readmeFilename": "README.md"
+}

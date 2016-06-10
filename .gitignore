@@ -1,0 +1,8 @@
+*.swp
+._*
+.idea
+.DS_Store
+*.min.js
+docs/
+node_modules/
+config.json
