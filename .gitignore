@@ -3,6 +3,7 @@
 .idea
 .DS_Store
 *.min.js
-docs/
-node_modules/
+*.js.map
+docs
+**/node_modules
 config.json

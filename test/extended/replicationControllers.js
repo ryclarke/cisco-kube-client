@@ -1,6 +1,7 @@
 'use strict';
 require('sugar');
-var should = require('should')
+require('should');
+var bunyan = require('bunyan')
   , test = require('../test')
   , Client = require('../../index')
   , config = require ('../../config')
@@ -8,20 +9,16 @@ var should = require('should')
   , test_namespace = 'kube-client-test'
   , replicas
   , client
+  , log
   , name;
 
-var debug;
-try {
-    debug = require('debug')('test');
-} catch (error) {
-    debug = function(){};
-}
-
-should.describe(title, function () {
+describe(title, function () {
     // Initialize the client and test namespace
-    should.before(function (done) {
+    before(function (done) {
         process.env.NODE_TLS_REJECT_UNAUTHORIZED = "0";
-
+        
+        log = bunyan.createLogger({ name: 'replication controllers (extended)' });
+        
         client = Client(Object.merge({
             namespace: null, timeout: this.timeout(), promise: false
         }, config, true, false));
@@ -32,12 +29,13 @@ should.describe(title, function () {
             test_namespace = rc.items[0].metadata.namespace;
             done();
         }).catch(function (error) {
-            done(error); debug(JSON.stringify(error, null, 4));
+            log(error);
+            done(error);
         });
     });
     
     // Test 'scale' method with positive scale
-    should.it('should scale the replicationController up', function (done) {
+    it('should scale the replicationController up', function (done) {
         client.replicationControllers.scale(name, 1, {namespace: test_namespace}).then(function (rc) {
             if (rc.spec.replicas == replicas + 1) {
                 done();
@@ -45,12 +43,13 @@ should.describe(title, function () {
                 throw new Error('spec.replicas should be incremented');
             }
         }).catch(function (error) {
-            done(error); debug(JSON.stringify(error, null, 4));
+            log(error);
+            done(error);
         });
     });
 
     // Test 'scale' method with negative scale
-    should.it('should scale the replicationController down', function (done) {
+    it('should scale the replicationController down', function (done) {
         client.replicationControllers.scale(name, -1, {namespace: test_namespace}).then(function (rc) {
             if (rc.spec.replicas == replicas) {
                 done();
@@ -58,7 +57,8 @@ should.describe(title, function () {
                 throw new Error('spec.replicas should be decremented');
             }
         }).catch(function (error) {
-            done(error); debug(JSON.stringify(error, null, 4));
+            log(error);
+            done(error);
         });
     });
 });

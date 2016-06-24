@@ -1,4 +1,4 @@
-module.exports = require('./lib/client.min');
+module.exports = require('./lib/client');
 /**
  * @module * index
  * @description The main entry point for [cisco-kube-client]{@link https://npmjs.org/packages/cisco-kube-client}
