@@ -74,7 +74,8 @@ clean :
 # Minimize the target javascript file using uglifyjs
 #
 %.min.js : %.js node_modules/.bin/uglifyjs
-	node_modules/.bin/uglifyjs $< -o $@ -cmv
+	node_modules/.bin/uglifyjs $< -o $@ -cmv --lint --keep-fnames \
+	--source-map $<.map --source-map-root https://github.com/ryclarke/cisco-kube-client/blob/master/$<
 
 # Install a missing npm package
 #

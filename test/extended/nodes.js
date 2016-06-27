@@ -1,6 +1,7 @@
 'use strict';
 require('sugar');
-var should = require('should')
+require('should');
+var bunyan = require('bunyan')
   , test = require('../test')
   , Client = require('../../index')
   , config = require ('../../config')
@@ -8,22 +9,18 @@ var should = require('should')
   , test_namespace = 'kube-client-test'
   , client
   , patch
+  , log
   , name;
 
-var debug;
-try {
-    debug = require('debug')('test');
-} catch (error) {
-    debug = function(){};
-}
-
-should.describe(title, function () {
+describe(title, function () {
     // Initialize the client and test namespace
-    should.before(function (done) {
+    before(function (done) {
         var self = this;
         process.env.NODE_TLS_REJECT_UNAUTHORIZED = "0";
 
         patch = test.importFile('nodes-patchPods.json');
+
+        log = bunyan.createLogger({ name: 'nodes (extended)' });
 
         client = Client(Object.merge({
             namespace: test_namespace, timeout: this.timeout(), promise: false
@@ -37,56 +34,62 @@ should.describe(title, function () {
                 return self.skip();
             }
         }).catch(function (error) {
-            done(error); debug(JSON.stringify(error, null, 4));
+            log(error);
+            done(error);
         });
     });
     
     // Test 'getPods' method
-    should.it('should return the pod list', function (done) {
+    it('should return the pod list', function (done) {
         client.nodes.getPods(name).then(function () {
             done();
         }).catch(function (error) {
-            done(error); debug(JSON.stringify(error, null, 4));
+            log(error);
+            done(error);
         });
     });
 
     // Test 'patchPods' method
-    should.it('should patch the pod list', function (done) {
+    it('should patch the pod list', function (done) {
         if (!patch) return this.skip();
         client.nodes.patchPods(name, patch).then(function () {
             done();
         }).catch(function (error) {
-            done(error); debug(JSON.stringify(error, null, 4));
+            log(error);
+            done(error);
         });
     });
 
     // Test 'deletePods' method
-    should.it('should delete the pod list', function (done) {
+    it('should delete the pod list', function (done) {
         if (!patch) return this.skip();
         client.nodes.deletePods(name).then(function () {
             done();
         }).catch(function (error) {
-            done(error); debug(JSON.stringify(error, null, 4));
+            log(error);
+            done(error);
         });
     });
 
     // Test 'evacuate' method
-    should.it('should evacuate the node', function (done) {
+    it('should evacuate the node', function (done) {
         if (!patch) return this.skip();
         client.nodes.evacuate(name).then(function () {
             done();
         }).catch(function (error) {
-            done(error); debug(JSON.stringify(error, null, 4));
+            log(error);
+            done(error);
         });
     });
 
     // Test 'schedule' method
-    should.it('should set the node as schedulable', function (done) {
+    it('should set the node as schedulable', function (done) {
         if (!patch) return this.skip();
         client.nodes.schedule(name).then(function () {
             done();
         }).catch(function (error) {
-            done(error); debug(JSON.stringify(error, null, 4));
+            log(error);
+            done(error);
         });
     });
 });

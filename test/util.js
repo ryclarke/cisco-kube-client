@@ -1,18 +1,20 @@
 'use strict';
 require('sugar');
-var should = require('should')
+require('should');
+var bunyan = require('bunyan')
   , Client = require('../lib/client.min')
   , config = require ('../config')
-  , title = 'Cisco Kubernetes Client (miscellaneous)';
+  , title = 'Cisco Kubernetes Client (miscellaneous)'
+  , log;
 
-var debug = function(){};
-
-should.describe(title, function () {
+describe(title, function () {
     var client;
 
     // Initialize the client and test namespace
-    should.before(function () {
+    before(function () {
         process.env.NODE_TLS_REJECT_UNAUTHORIZED = "0";
+
+        log = bunyan.createLogger({ name: 'util' });
 
         client = Client(Object.merge({
             namespace: 'kube-client-test', timeout: this.timeout(), promise: false
@@ -20,7 +22,7 @@ should.describe(title, function () {
     });
     
     // Initialize the client as a Promise
-    should.it('should return a Promise of the client', function (done) {
+    it('should return a Promise of the client', function (done) {
         process.env.NODE_TLS_REJECT_UNAUTHORIZED = "0";
         
         Client(Object.merge({
@@ -30,16 +32,17 @@ should.describe(title, function () {
                 done();
             });
         }).catch(function (error) {
-            done(error); debug(JSON.stringify(error, null, 4));
+            log(error);
+            done(error);
         });
     });
     
     // Use a method with a Node.js callback
-    should.it('should use a Node.js callback', function (done) {
+    it('should use a Node.js callback', function (done) {
         client.namespaces.get(function (error) {
             if (error) {
+                log(error);
                 done(error);
-                debug(JSON.stringify(error, null, 4));
             } else done();
         });
     });
