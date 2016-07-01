@@ -120,6 +120,10 @@
             </li>
             
             <li>
+              <a href="module-errors.ClientError.html">errors.ClientError</a>
+            </li>
+            
+            <li>
               <a href="module-errors.HttpError.html">errors.HttpError</a>
             </li>
             
@@ -133,10 +137,6 @@
             
             <li>
               <a href="module-errors.VersionError.html">errors.VersionError</a>
-            </li>
-            
-            <li>
-              <a href="module-errors-ClientError.html">errors~ClientError</a>
             </li>
             
 
@@ -299,56 +299,12 @@ used as input to the <code>ClientConfig</code> constructor to define a new one. 
       
   
       
-      <th>Default</th>
-      
   
       <th class="last">Description</th>
     </tr>
     </thead>
   
     <tbody>
-    
-  
-          <tr>
-              
-                  <td class="name"><code>logLevel</code></td>
-              
-  
-              <td class="type">
-              
-                  
-<span class="param-type">number</span>
-|
-
-<span class="param-type">string</span>
-
-
-              
-              </td>
-  
-              
-                  <td class="attributes">
-                  
-                      &lt;optional><br>
-                  
-  
-                  
-  
-                  
-                  </td>
-              
-  
-              
-                  <td class="default">
-                  
-                      bunyan.FATAL
-                  
-                  </td>
-              
-  
-              <td class="description last"><p>Maximum log output level</p></td>
-          </tr>
-  
     
   
           <tr>
@@ -381,12 +337,44 @@ used as input to the <code>ClientConfig</code> constructor to define a new one. 
               
   
               
-                  <td class="default">
+  
+              <td class="description last"><p>Define OpenShift API resource endpoints</p></td>
+          </tr>
+  
+    
+  
+          <tr>
+              
+                  <td class="name"><code>extensions</code></td>
+              
+  
+              <td class="type">
+              
+                  
+<span class="param-type">string</span>
+|
+
+<span class="param-type">boolean</span>
+
+
+              
+              </td>
+  
+              
+                  <td class="attributes">
+                  
+                      &lt;optional><br>
+                  
+  
+                  
+  
                   
                   </td>
               
   
-              <td class="description last"><p>Define OpenShift API resource endpoints</p></td>
+              
+  
+              <td class="description last"><p>Define Kubernetes Extensions API resource endpoints</p></td>
           </tr>
   
     
@@ -421,12 +409,8 @@ used as input to the <code>ClientConfig</code> constructor to define a new one. 
               
   
               
-                  <td class="default">
-                  
-                  </td>
-              
   
-              <td class="description last"><p>Define Kubernetes beta API resource endpoints</p></td>
+              <td class="description last"><p>(deprecated) Alias for  options.extensions</p></td>
           </tr>
   
     
@@ -458,12 +442,8 @@ used as input to the <code>ClientConfig</code> constructor to define a new one. 
               
   
               
-                  <td class="default">
-                  
-                  </td>
-              
   
-              <td class="description last"><p>List of API specifications to define</p></td>
+              <td class="description last"><p>List of additional API specifications to define</p></td>
           </tr>
   
     
@@ -630,7 +610,7 @@ used as input to the <code>ClientConfig</code> constructor to define a new one. 
         <dl>
             
 <dt>
-    <h4 class="name" id="authenticate"><span class="type-signature"></span>authenticate<span class="signature">(flush, <span class="optional">next</span>)</span><span class="type-signature"> &rarr; {Promise.&lt;<a href="module-client-ClientConfig.html">module:client~ClientConfig</a>>}</span></h4>
+    <h4 class="name" id="authenticate"><span class="type-signature"></span>authenticate<span class="signature">(<span class="optional">flush</span>, <span class="optional">next</span>)</span><span class="type-signature"> &rarr; {Promise.&lt;<a href="module-client-ClientConfig.html">module:client~ClientConfig</a>>}</span></h4>
     
     
 </dt>
@@ -666,6 +646,8 @@ Returns a <code>Promise</code> of the updated <code>ClientConfig</code> with the
       
   
       
+      <th>Default</th>
+      
   
       <th class="last">Description</th>
     </tr>
@@ -691,6 +673,8 @@ Returns a <code>Promise</code> of the updated <code>ClientConfig</code> with the
               
                   <td class="attributes">
                   
+                      &lt;optional><br>
+                  
   
                   
   
@@ -698,6 +682,12 @@ Returns a <code>Promise</code> of the updated <code>ClientConfig</code> with the
                   </td>
               
   
+              
+                  <td class="default">
+                  
+                      false
+                  
+                  </td>
               
   
               <td class="description last"><p>Delete the client's token if it already exists</p></td>
@@ -731,6 +721,10 @@ Returns a <code>Promise</code> of the updated <code>ClientConfig</code> with the
                   </td>
               
   
+              
+                  <td class="default">
+                  
+                  </td>
               
   
               <td class="description last"><p>Node.js callback (replaces Promise output)</p></td>
@@ -1189,7 +1183,7 @@ Returns a <code>Promise</code> of the updated <code>ClientConfig</code> with the
           
     <span class="jsdoc-message">
     Documentation generated by <a href="https://github.com/jsdoc3/jsdoc" target="_blank">JSDoc 3.4.0</a>
-    on 2016-06-10T14:00:46-04:00
+    on 2016-07-01T13:17:51-04:00
     </span>
         </footer>
       </div>

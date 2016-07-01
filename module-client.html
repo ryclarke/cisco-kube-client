@@ -120,6 +120,10 @@
             </li>
             
             <li>
+              <a href="module-errors.ClientError.html">errors.ClientError</a>
+            </li>
+            
+            <li>
               <a href="module-errors.HttpError.html">errors.HttpError</a>
             </li>
             
@@ -133,10 +137,6 @@
             
             <li>
               <a href="module-errors.VersionError.html">errors.VersionError</a>
-            </li>
-            
-            <li>
-              <a href="module-errors-ClientError.html">errors~ClientError</a>
             </li>
             
 
@@ -275,7 +275,7 @@
         <dl>
             
 <dt>
-    <h4 class="name" id=".call"><span class="type-signature">&lt;static> </span>call<span class="signature">(config)</span><span class="type-signature"> &rarr; {<a href="module-client.KubernetesClient.html">module:client.KubernetesClient</a>|bluebird|Promise.&lt;<a href="module-client.KubernetesClient.html">module:client.KubernetesClient</a>>}</span></h4>
+    <h4 class="name" id=".call"><span class="type-signature">&lt;static> </span>call<span class="signature">(config)</span><span class="type-signature"> &rarr; {<a href="module-client.KubernetesClient.html">module:client.KubernetesClient</a>|Promise.&lt;<a href="module-client.KubernetesClient.html">module:client.KubernetesClient</a>>}</span></h4>
     
     
 </dt>
@@ -336,234 +336,7 @@
   
               
   
-              <td class="description last"><p>Client configuration options</p>
-                  <h6>Properties</h6>
-                  
-<div class="params-table-container">
-  <table class="params table table-striped">
-      <thead>
-    <tr>
-      
-      <th>Name</th>
-      
-  
-      <th>Type</th>
-  
-      
-      <th>Argument</th>
-      
-  
-      
-      <th>Default</th>
-      
-  
-      <th class="last">Description</th>
-    </tr>
-    </thead>
-  
-    <tbody>
-    
-  
-          <tr>
-              
-                  <td class="name"><code>logLevel</code></td>
-              
-  
-              <td class="type">
-              
-                  
-<span class="param-type">number</span>
-|
-
-<span class="param-type">string</span>
-
-
-              
-              </td>
-  
-              
-                  <td class="attributes">
-                  
-                      &lt;optional><br>
-                  
-  
-                  
-  
-                  
-                  </td>
-              
-  
-              
-                  <td class="default">
-                  
-                      bunyan.FATAL
-                  
-                  </td>
-              
-  
-              <td class="description last"><p>Level of log data to display</p></td>
-          </tr>
-  
-    
-  
-          <tr>
-              
-                  <td class="name"><code>beta</code></td>
-              
-  
-              <td class="type">
-              
-                  
-<span class="param-type">boolean</span>
-
-
-              
-              </td>
-  
-              
-                  <td class="attributes">
-                  
-                      &lt;optional><br>
-                  
-  
-                  
-  
-                  
-                  </td>
-              
-  
-              
-                  <td class="default">
-                  
-                      false
-                  
-                  </td>
-              
-  
-              <td class="description last"><p>Enable the core API beta extensions</p></td>
-          </tr>
-  
-    
-  
-          <tr>
-              
-                  <td class="name"><code>oshift</code></td>
-              
-  
-              <td class="type">
-              
-                  
-<span class="param-type">boolean</span>
-
-
-              
-              </td>
-  
-              
-                  <td class="attributes">
-                  
-                      &lt;optional><br>
-                  
-  
-                  
-  
-                  
-                  </td>
-              
-  
-              
-                  <td class="default">
-                  
-                      false
-                  
-                  </td>
-              
-  
-              <td class="description last"><p>Enable the OpenShift API endpoints</p></td>
-          </tr>
-  
-    
-  
-          <tr>
-              
-                  <td class="name"><code>extensions</code></td>
-              
-  
-              <td class="type">
-              
-                  
-<span class="param-type">array</span>
-
-
-              
-              </td>
-  
-              
-                  <td class="attributes">
-                  
-                      &lt;optional><br>
-                  
-  
-                  
-  
-                  
-                  </td>
-              
-  
-              
-                  <td class="default">
-                  
-                  </td>
-              
-  
-              <td class="description last"><p>List of additional API extension specifications to include</p></td>
-          </tr>
-  
-    
-  
-          <tr>
-              
-                  <td class="name"><code>usePromise</code></td>
-              
-  
-              <td class="type">
-              
-                  
-<span class="param-type">boolean</span>
-
-
-              
-              </td>
-  
-              
-                  <td class="attributes">
-                  
-                      &lt;optional><br>
-                  
-  
-                  
-  
-                  
-                  </td>
-              
-  
-              
-                  <td class="default">
-                  
-                      false
-                  
-                  </td>
-              
-  
-              <td class="description last"><p>Wrap the initialized client in a [Promise]{http://bluebirdjs.com}</p></td>
-          </tr>
-  
-    
-    </tbody>
-  </table>
-</div>
-
-              </td>
+              <td class="description last"><p>Client configuration options</p></td>
           </tr>
   
     
@@ -646,9 +419,6 @@
 <span class="param-type"><a href="module-client.KubernetesClient.html">module:client.KubernetesClient</a></span>
 |
 
-<span class="param-type">bluebird</span>
-|
-
 <span class="param-type">Promise.&lt;<a href="module-client.KubernetesClient.html">module:client.KubernetesClient</a>></span>
 
 
@@ -687,7 +457,7 @@
           
     <span class="jsdoc-message">
     Documentation generated by <a href="https://github.com/jsdoc3/jsdoc" target="_blank">JSDoc 3.4.0</a>
-    on 2016-06-10T14:00:46-04:00
+    on 2016-07-01T13:17:51-04:00
     </span>
         </footer>
       </div>

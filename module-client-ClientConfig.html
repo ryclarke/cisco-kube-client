@@ -120,6 +120,10 @@
             </li>
             
             <li>
+              <a href="module-errors.ClientError.html">errors.ClientError</a>
+            </li>
+            
+            <li>
               <a href="module-errors.HttpError.html">errors.HttpError</a>
             </li>
             
@@ -133,10 +137,6 @@
             
             <li>
               <a href="module-errors.VersionError.html">errors.VersionError</a>
-            </li>
-            
-            <li>
-              <a href="module-errors-ClientError.html">errors~ClientError</a>
             </li>
             
 
@@ -443,7 +443,68 @@ the object. If any required parameters are missing an error will be thrown.</p>
                   
   
                   
-                      &lt;nullable><br>
+  
+                  
+                  </td>
+              
+  
+              
+                  <td class="default">
+                  
+                      {}
+                  
+                  </td>
+              
+  
+              <td class="description last"><p>Sets
+<code>ClientConfig#<a href="module-client-ClientConfig.html#authOptions"><code>authOptions</code></a></code></p>
+                  <h6>Properties</h6>
+                  
+<div class="params-table-container">
+  <table class="params table table-striped">
+      <thead>
+    <tr>
+      
+      <th>Name</th>
+      
+  
+      <th>Type</th>
+  
+      
+      <th>Argument</th>
+      
+  
+      
+      <th>Default</th>
+      
+  
+      <th class="last">Description</th>
+    </tr>
+    </thead>
+  
+    <tbody>
+    
+  
+          <tr>
+              
+                  <td class="name"><code>allowUnsafe</code></td>
+              
+  
+              <td class="type">
+              
+                  
+<span class="param-type">boolean</span>
+
+
+              
+              </td>
+  
+              
+                  <td class="attributes">
+                  
+                      &lt;optional><br>
+                  
+  
                   
   
                   
@@ -453,13 +514,59 @@ the object. If any required parameters are missing an error will be thrown.</p>
               
                   <td class="default">
                   
-                      null
+                      false
                   
                   </td>
               
   
-              <td class="description last"><p>Sets
-<code>ClientConfig#<a href="module-client-ClientConfig.html#authOptions"><code>authOptions</code></a></code></p></td>
+              <td class="description last"><p>Permit authentication without SSL/TLS</p></td>
+          </tr>
+  
+    
+  
+          <tr>
+              
+                  <td class="name"><code>preserveAuth</code></td>
+              
+  
+              <td class="type">
+              
+                  
+<span class="param-type">boolean</span>
+
+
+              
+              </td>
+  
+              
+                  <td class="attributes">
+                  
+                      &lt;optional><br>
+                  
+  
+                  
+  
+                  
+                  </td>
+              
+  
+              
+                  <td class="default">
+                  
+                      true
+                  
+                  </td>
+              
+  
+              <td class="description last"><p>Keep user credentials for re-authentication</p></td>
+          </tr>
+  
+    
+    </tbody>
+  </table>
+</div>
+
+              </td>
           </tr>
   
     
@@ -533,6 +640,87 @@ the object. If any required parameters are missing an error will be thrown.</p>
               
   
               <td class="description last"><p>Alias for the <code>host</code> parameter</p></td>
+          </tr>
+  
+    
+  
+          <tr>
+              
+                  <td class="name"><code>logLevel</code></td>
+              
+  
+              <td class="type">
+              
+                  
+<span class="param-type">string</span>
+|
+
+<span class="param-type">number</span>
+
+
+              
+              </td>
+  
+              
+                  <td class="attributes">
+                  
+                      &lt;optional><br>
+                  
+  
+                  
+  
+                  
+                  </td>
+              
+  
+              
+                  <td class="default">
+                  
+                      bunyan.FATAL
+                  
+                  </td>
+              
+  
+              <td class="description last"><p>Set log output level (equivalent to logOptions.level)</p></td>
+          </tr>
+  
+    
+  
+          <tr>
+              
+                  <td class="name"><code>logOptions</code></td>
+              
+  
+              <td class="type">
+              
+                  
+<span class="param-type">object</span>
+
+
+              
+              </td>
+  
+              
+                  <td class="attributes">
+                  
+                      &lt;optional><br>
+                  
+  
+                  
+  
+                  
+                  </td>
+              
+  
+              
+                  <td class="default">
+                  
+                      {}
+                  
+                  </td>
+              
+  
+              <td class="description last"><p>Configure options for the bunyan logger</p></td>
           </tr>
   
     
@@ -677,8 +865,6 @@ the object. If any required parameters are missing an error will be thrown.</p>
                   
   
                   
-                      &lt;nullable><br>
-                  
   
                   
                   </td>
@@ -687,7 +873,7 @@ the object. If any required parameters are missing an error will be thrown.</p>
               
                   <td class="default">
                   
-                      null
+                      {}
                   
                   </td>
               
@@ -706,7 +892,7 @@ the object. If any required parameters are missing an error will be thrown.</p>
               <td class="type">
               
                   
-<span class="param-type">int</span>
+<span class="param-type">number</span>
 
 
               
@@ -880,6 +1066,9 @@ the object. If any required parameters are missing an error will be thrown.</p>
     <div class="param-desc">
     
         
+<span class="param-type">TypeError</span>
+|
+
 <span class="param-type"><a href="module-errors.ParameterError.html">module:errors.ParameterError</a></span>
 |
 
@@ -1062,7 +1251,7 @@ server host, then this parameter may be excluded.</p>
         
             
 <dt class="name" id="authOptions">
-    <h4><span class="type-signature">&lt;readonly, nullable> </span>authOptions<span class="type-signature"> :object</span></h4>
+    <h4><span class="type-signature">&lt;readonly> </span>authOptions<span class="type-signature"> :object</span></h4>
 
     
 </dt>
@@ -1070,8 +1259,8 @@ server host, then this parameter may be excluded.</p>
     
     <div class="description">
         <p>Request options for authentication</p>
-<p>These are passed directly to the request module and override the default configuration. Consult the documentation
-for the <code>request</code> module (linked below) for information on valid properties for this object.</p>
+<p>Contained properties are passed directly to the request module and override the default configuration for token
+requests. Consult the documentation for the <code>request</code> module (linked below) for information on valid properties.</p>
     </div>
     
 
@@ -1109,7 +1298,7 @@ for the <code>request</code> module (linked below) for information on valid prop
   <dt class="tag-default">Default Value:</dt>
   <dd class="tag-default">
     <ul class="dummy">
-      <li>null</li>
+      <li>{}</li>
     </ul>
   </dd>
   
@@ -1150,7 +1339,7 @@ for the <code>request</code> module (linked below) for information on valid prop
 <p>Defines the full URL endpoint for the API server, including protocol and port. If port or protocol are excluded
 from the host specification, then the ClientConfig will look for them as <code>port</code> or <code>protocol</code> input parameters,
 respectively. If they are not defined in either format then the default values will be used to complete the URL.</p>
-<p>Default if only hostname is provided: <code>https://{hostname}:8443</code></p>
+<p>Default if only hostname is provided: <code>https://{hostname}</code></p>
     </div>
     
 
@@ -1281,7 +1470,7 @@ defining the <code>namespace</code> property of their request options. An empty 
         
             
 <dt class="name" id="requestOptions">
-    <h4><span class="type-signature">&lt;readonly, nullable> </span>requestOptions<span class="type-signature"> :object</span></h4>
+    <h4><span class="type-signature">&lt;readonly> </span>requestOptions<span class="type-signature"> :object</span></h4>
 
     
 </dt>
@@ -1289,8 +1478,9 @@ defining the <code>namespace</code> property of their request options. An empty 
     
     <div class="description">
         <p>Request options for API endpoints</p>
-<p>These are passed directly to the request module and override the default configuration. Consult the documentation
-for the <code>request</code> module (linked below) for information on valid properties for this object.</p>
+<p>These are passed directly to the request module and override the default configuration for every method. Consult
+the documentation for the <code>request</code> module (linked below) for information on valid properties for this object.</p>
+<p>The most common use case is to supply custom headers needed by your proxy or API server.</p>
     </div>
     
 
@@ -1328,7 +1518,7 @@ for the <code>request</code> module (linked below) for information on valid prop
   <dt class="tag-default">Default Value:</dt>
   <dd class="tag-default">
     <ul class="dummy">
-      <li>null</li>
+      <li>{}</li>
     </ul>
   </dd>
   
@@ -1599,7 +1789,7 @@ Kubernetes API schema for API versions.</p>
           
     <span class="jsdoc-message">
     Documentation generated by <a href="https://github.com/jsdoc3/jsdoc" target="_blank">JSDoc 3.4.0</a>
-    on 2016-06-10T14:00:46-04:00
+    on 2016-07-01T13:17:51-04:00
     </span>
         </footer>
       </div>
