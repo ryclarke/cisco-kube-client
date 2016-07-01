@@ -21,7 +21,4 @@ var client = new Client(options);
 //                                          //
 //////////////////////////////////////////////
 
-client.pods.get().then(function (rc) {
-    console.log(rc);
-});
-
+client.pods.get().then(console.log);

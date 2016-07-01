@@ -1,3 +1,5 @@
+TIMEOUT ?= 10000
+
 # Project target files
 #
 TARGETS = \
@@ -16,13 +18,13 @@ SOURCE = \
 	lib/errors.js    \
 	lib/spec.js
 
-.PHONY: all clean fake publish test test-util test-extended test-kubernetes test-oshift
+.PHONY: all clean fake publish test
 
 all : $(TARGETS)
 
 # Publish the project to NPM
 #
-publish : all
+publish : test
 	npm publish
 
 # Create a tar file of the project
@@ -32,27 +34,8 @@ tar :
 
 # Run project unit tests
 #
-test : test-util test-kubernetes test-extended
-
-# Test utility methods
-#
-test-util : all
-	node_modules/.bin/mocha --timeout $(TIMEOUT) --recursive test/util
-
-# Test extended methods
-#
-test-extended : all
-	node_modules/.bin/mocha --timeout $(TIMEOUT) --recursive test/extended
-
-# Test core Kubernetes methods
-#
-test-kubernetes : all
-	node_modules/.bin/mocha --timeout $(TIMEOUT) --recursive test/kubernetes
-
-# Test core OpenShift methods
-#
-test-oshift : all
-	node_modules/.bin/mocha --timeout $(TIMEOUT) --recursive test/oshift
+test : all test/integrated.js test/test.js
+	node_modules/.bin/mocha --timeout $(TIMEOUT) test/integrated
 
 # Generate project documentation using JSDoc and the jsdoc-oblivion theme
 #

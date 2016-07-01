@@ -1,4 +1,9 @@
 {
+  "metadata": {
+    "annotations": {
+      "test": "patched!"
+    }
+  },
   "spec": {
     "ports": [
       {
